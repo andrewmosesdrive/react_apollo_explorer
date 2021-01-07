@@ -23,7 +23,7 @@ const typeDefs = gql`
       trips: [Launch]!
       token: String
   }
-  
+
   type Mission {
       name: String
       missionPatch(size: PatchSize: String)
@@ -32,6 +32,24 @@ const typeDefs = gql`
   enum PatchSize {
       SMALL
       LARGE
+  }
+
+  type Query {
+      launches: [Launch]!
+      launch(id: ID!): Launch
+      me: User
+  }
+
+  type Mutation {
+      bookTrips(launchIds: [ID]!): TripUpdateResponse!
+      cancelTrip(launchId: ID!): TripUpdateReponse!
+      login(email: String): User
+  }
+
+  type TripUpdateResponse {
+      success: Boolean!
+      message: String
+      launches: [Launch]
   }
 `;
 
