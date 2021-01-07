@@ -12,9 +12,8 @@ const typeDefs = gql`
 
   type Rocket {
       id: ID!
-      email: String!
-      trips: [Launch]!
-      token: String
+      name: String
+      type: String
   }
 
   type User {
@@ -26,7 +25,7 @@ const typeDefs = gql`
 
   type Mission {
       name: String
-      missionPatch(size: PatchSize: String)
+      missionPatch(size: PatchSize): String
   }
 
   enum PatchSize {
@@ -42,7 +41,7 @@ const typeDefs = gql`
 
   type Mutation {
       bookTrips(launchIds: [ID]!): TripUpdateResponse!
-      cancelTrip(launchId: ID!): TripUpdateReponse!
+      cancelTrip(launchId: ID!): TripUpdateResponse!
       login(email: String): User
   }
 
