@@ -1,3 +1,3 @@
-# Apollo Fullstack Tutorial
+# react_apollo_explorer
 
-## Client
+## Built from https://www.apollographql.com/docs/
