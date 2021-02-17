@@ -7,7 +7,7 @@ class LaunchAPI extends RESTDataSource {
   }
 
   // get method; if launches map out and use launchReducer, else return empty array
-  async getAllLaunhes() {
+  async getAllLaunches() {
     const response = await this.get("launches");
     return Array.isArray(response)
       ? response.map((launch) => this.launchReducer(launch))
